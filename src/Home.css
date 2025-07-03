@@ -1,0 +1,147 @@
+
+.homepage-img1{
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin-left: -50px;
+
+}
+
+.homepage-img2{
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin-right: -50px;
+
+}
+
+
+.box{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+}
+
+
+.box-text{
+    width: 100%;
+    text-align: center;
+    margin: 20px;
+}
+
+.box-text-img{
+    width: 20%;
+    align-self: center;
+}
+
+.container-text>h1{
+    color: gray;
+    text-align: right;
+}
+
+
+.groups-section{
+    background-color: #d6dcdc;
+    width: 100%;
+    margin: -40px;
+    padding: 50px;
+    padding-bottom: 100px;
+}
+
+
+.group-box{
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: auto;
+}
+
+.groups-flexbox{
+    display: flex;
+    width: 65%;
+    height: auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.group-box>p{
+    margin-top: -10px;
+}
+
+.group-box>.flex>h1{
+    font-size: 14px;
+}
+
+.group-box-icon{
+    cursor: pointer;
+    padding: 5px;
+
+}
+
+.group-box-icon:hover{
+    background-color: #d6dcdc;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.create-section{
+    background-color: white;
+    width: 100%;
+    margin: -50px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: auto auto;
+    padding: 50px;
+   
+}
+
+.common-room-img{
+    width: 30%;
+    border-radius: 15px;
+}
+
+.create-form{
+    padding: 10px;
+    display: grid;
+    gap: 20px;
+
+}
+
+.create-form>button{
+    height: auto;
+    width: 85%;
+}
+
+input{
+    width: 83%;
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.grid-box{
+    display: grid;
+}
+
+.grid-box>p{
+    font-size: x-small;
+    color: gray;
+}
+
+textarea{
+    width: 100%;
+    border-radius: 5px;
+    height: 120px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    font-family: sans-serif
+
+}

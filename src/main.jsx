@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/groups/:name" element={<Groups/>}></Route>
+        <Route path="/groups/:label" element={<Groups/>}></Route>
         <Route path="*" element={<div>Page not found</div>}></Route>
       </Routes>
     </BrowserRouter>

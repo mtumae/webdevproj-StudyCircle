@@ -35,6 +35,13 @@
     align-self: center;
 }
 
+.round-box{
+    padding: 40px;
+    border-radius: 30px;
+    width:2%;
+    height: 2%;
+}
+
 .container-text>h1{
     color: gray;
     text-align: right;
@@ -111,16 +118,22 @@
     padding: 10px;
     display: grid;
     gap: 20px;
+    border: 1px solid black;
 
 }
 
 .create-form>button{
     height: auto;
-    width: 85%;
+    width: 100%;
 }
 
 input{
-    width: 83%;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+select{
     border-radius: 5px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 

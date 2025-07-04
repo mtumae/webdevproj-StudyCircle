@@ -4,6 +4,7 @@ import studentStudying2 from "/students-studying1.jpg"
 import './Home.css'
 import { SquarePlus } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const groups = [
@@ -16,20 +17,17 @@ const groups = [
 ]
 
 export default function Home(){
-    const [formData, setFormData] = useState({
-        name:"",
-        label:"",
-        members:0,
-        color:""
-    })
-
-
-    const onSubmit = () =>{
-        
+    const navigate = useNavigate()
+    const [color, setColor]=useState("")
+    const [newGroups, setNewGroups] = useState([])
+    
+    
+    function handleSubmit(e){
+        e.preventDefault();
+        const formData = new FormData(e.target)
+        const formDataobj = Object.fromEntries(formData);
+        console.log(formDataobj)
     }
-
-
-
 
     return(
         <section>
@@ -62,14 +60,12 @@ export default function Home(){
 
         <div class="groups-section">
             <h1>Join a Group</h1>
-
-
             <div class="groups-flexbox">
                 {groups.map((g, id)=>(
                     <div key={id} class="group-box">
                         <div class="flex">
                             <h1 style={{color:g.color}}>{g.label}</h1>
-                            <SquarePlus class="group-box-icon" color={g.color} />
+                            <SquarePlus onClick={()=>{navigate("/groups/"+g)}} class="group-box-icon" color={g.color} />
                         </div>
                         <p>{g.members.toString()} members</p>
                     </div>
@@ -82,15 +78,29 @@ export default function Home(){
             
             
 
-            <form class="create-form">
+            <form id="create-form" class="create-form" onSubmit={handleSubmit}>
                 <div>
-                <label for="groupname">Group name</label>
-                <input id="groupname" placeholder=""/>
+                    <label for="group-name">Group name</label>
+                    <input name="group-name" style={{color:color}} id="group-name" placeholder=""/>
                 </div>
+
+                
+                <div className="flex-box">
+                <label htmlFor="color">Pick a color</label>
+                <select 
+                onChange={(e)=>{setColor(e.target.value)}}
+                name="color" id="color">
+                    <option value={"black"}>Black</option>
+                    <option value={"red"}>Red</option>
+                    <option value={"green"}>Green</option>
+                    <option value={"blue"}>Blue</option>
+                </select>
+                </div>
+
 
                 <div class="grid-box">
                     <label for="description">Description</label>
-                    <textarea type="message" id="description" />
+                    <textarea name="description" id="description" />
                     <p>Give a short description of the group</p>
                 </div>
 
@@ -99,6 +109,12 @@ export default function Home(){
 
             <div>
                 <h1>Create a Group</h1>
+                <p>
+                    Creating a study group on StudyCircle is quick and easy! Fill out the form with your group’s name, description, and preferred color. 
+                    Once your group is set up, you’ll receive a unique invite link you can share via email, messaging apps, or 
+                    social media. You can also search for friends directly on the platform and send them invitations to join. 
+                    Start your own learning community today and enjoy the benefits of studying together!
+                </p>
             </div>
 
 

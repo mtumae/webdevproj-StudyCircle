@@ -27,14 +27,14 @@ export default function Groups() {
 
 
   const params = useParams()
-  console.log(params.groupid)
+  console.log(params)
 
 
   return (
     <>
     <div class="header">
         <div class="title">
-          <h1>{params.name}</h1>
+          <h1>{params.}</h1>
           <a href="users.html">10 members</a>
         </div>
 

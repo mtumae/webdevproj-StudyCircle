@@ -34,7 +34,7 @@ export default function Groups() {
     <>
     <div class="header">
         <div class="title">
-          <h1>{params.}</h1>
+          <h1>{params.label}</h1>
           <a href="users.html">10 members</a>
         </div>
 

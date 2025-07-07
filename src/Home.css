@@ -28,12 +28,15 @@
     width: 100%;
     text-align: center;
     margin: 20px;
+    font-size: 20px;
 }
 
 .box-text-img{
     width: 20%;
     align-self: center;
 }
+
+
 
 .round-box{
     padding: 40px;
@@ -68,7 +71,7 @@
 
 .groups-flexbox{
     display: flex;
-    width: 65%;
+    width: 100%;
     height: auto;
     gap: 20px;
     flex-wrap: wrap;
@@ -85,16 +88,19 @@
 .group-box-icon{
     cursor: pointer;
     padding: 5px;
+    border-radius: 10px;
 
 }
 
 .group-box-icon:hover{
     background-color: #d6dcdc;
+    
 }
 
 .flex{
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 
@@ -115,10 +121,10 @@
 }
 
 .create-form{
-    padding: 10px;
+    padding: 20px;
     display: grid;
     gap: 20px;
-    border: 1px solid black;
+    width: 80%;
 
 }
 
@@ -128,7 +134,7 @@
 }
 
 input{
-    width: 100%;
+    width: 90%;
     border-radius: 5px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }

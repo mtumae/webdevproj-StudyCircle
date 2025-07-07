@@ -1,0 +1,49 @@
+
+
+
+
+.card{
+    padding: 30px;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: gray 1px solid;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover{
+    padding: 32px;
+
+}
+
+.flex-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-title{
+    display: grid;
+    font-size: medium;
+}
+
+.card-title>p{
+    margin-top: -10px;
+    color: #cfc2bc;
+}
+
+.card-title>h1{
+    font-size: 15px;
+}
+
+p{
+    color: #46454a;
+    font-size: 13px;
+}
+
+
+.grid-container{
+    display: grid;
+    gap: 20px;
+}

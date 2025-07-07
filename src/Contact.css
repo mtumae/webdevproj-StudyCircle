@@ -1,0 +1,30 @@
+
+
+
+.contact-us{
+    display: grid;
+    width: 100%;
+    padding: 30px;
+    align-items: center;
+    border-radius: 15px;
+}
+
+form{
+    display: grid;
+    gap: 10px;
+}
+
+p{
+    color: #46454a;
+    font-size: 13px;
+}
+
+
+.contact-form{
+    width: 60%;
+    margin-top: 20px;
+}
+
+input{
+    width: 100%;
+}

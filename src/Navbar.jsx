@@ -14,6 +14,7 @@ export default function NavBar(){
         <div class="header">
             <h1>StudyCirlce</h1>
             <div class="inner-header">
+                <a href='/'>Home</a>
                 <a href='/about'>About</a>
                 <a href='/contact'>Contact</a>
                 {date.getHours()>=12&&date.getHours()<17?

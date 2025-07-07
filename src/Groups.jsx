@@ -2,7 +2,6 @@ import './Groups.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { CirclePlus } from 'lucide-react'
-import { useEffect } from 'react'
 //import icons from lucide
 
 
@@ -12,7 +11,7 @@ export default function Groups() {
   const navigate = useNavigate()
   const[msg, setMsg]=useState("")
   const [copy, setCopy]=useState('')
-  const[oldmessages, setOldMessages]=useState([{user:"Mtume", msg:"I love this class.", file:null}, {user:"Bob", msg:"I don't love this class."}])//populate with messages from object
+  const[oldmessages]=useState([{user:"Mtume", msg:"I love this class.", file:null}, {user:"Bob", msg:"I don't love this class."}])//populate with messages from object
   const[newmessages, setNewMessages]=useState([""])
 
 

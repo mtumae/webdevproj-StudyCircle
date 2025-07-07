@@ -26,5 +26,10 @@ p{
 }
 
 input{
-    width: 100%;
+    width: 98%;
+}
+
+button{
+    height: auto;
+    background-color: #fdbf04;
 }

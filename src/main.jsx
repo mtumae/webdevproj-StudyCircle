@@ -16,9 +16,10 @@ createRoot(document.getElementById('root')).render(
         <Route path="/about" element={<About/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
         <Route path="/groups/:label" element={<Groups/>}></Route>
-        <Route path="*" element={<div>
-          <NavBar />
-          Page not found
+        <Route path="*" element={
+          <div>
+            <NavBar />
+            Page not found
           </div>}>
         </Route>
       </Routes>

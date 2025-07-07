@@ -27,7 +27,7 @@ const groups = [
 export default function Home(){
     const navigate = useNavigate()
     const [color, setColor]=useState("")
-    const [newGroups, setNewGroups] = useState([])
+    const [newGroups] = useState([])
 
     
     function handleSubmit(e){
@@ -42,10 +42,8 @@ export default function Home(){
     return(
         <section>
             <NavBar />
-
           <div class="box">
             <img class="homepage-img1" src={studentStudying}/>
-         
             <p class="box-text">
                 Welcome to StudyCircle, your go-to hub for collaborative learning and academic success! 
                 Whether you're preparing for exams, tackling tough assignments, or simply looking to expand 
@@ -77,10 +75,20 @@ export default function Home(){
                         <p>{g.members.toString()} members</p>
                     </div>
                 ))}
+                {newGroups>0?
+                newGroups.map((n, id)=> (
+                    <div key={id} class="group-box">
+                        <div class="flex">
+                            <h1 style={{color:new.target}}>{new.target}</h1>
+                            <SquarePlus onClick={()=>{navigate("/groups/"+new.target)}} class="group-box-icon" color={new.target}/>
+                        </div>
+                        <p>0 members</p>
+                    </div>
+                )):<div></div>}
             </div>
         </div>
         <div class="create-section">
-            <form id="create-form" class="create-form" onSubmit={handleSubmit}>
+            <form method="post" id="create-form" class="create-form" onSubmit={handleSubmit}>
                 <div>
                     <label for="group-name">Group name</label>
                     <input name="group-name" style={{color:color}} id="group-name" placeholder=""/>

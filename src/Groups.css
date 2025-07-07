@@ -98,21 +98,32 @@ button{
     background-color: aquamarine;
 }
 
-.container{
-    position: fixed;
+.input-box{
+ 
     display: flex;
+    z-index: 50;
     right: 0;
-    margin-right: 10px;
-    align-items: center;
+    margin-right: 3%;
+    margin-top: 20px;
+    width: 50%;
+    align-self: center;
     
 }
 
 .plus-icon{
     background-color: aquamarine;
+    border-radius:0px 10px 10px 0px ;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 3px;
+    border: 1px gray;
     color: white;
+    margin-right: 5px;
     padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.plus-icon:hover{
+    padding: 12px;
 }
 
 /* .plus-icon:hover{
@@ -123,7 +134,10 @@ input{
     padding: 10px;
     display: flex;
     flex:wrap;
-    border-radius: 40px;
-    border:1px solid gray;
-
+    border-radius: 0px 0px 0px 0px;
+    border-left: 1px;
+    border-top: 1px;
+    border-right: 1px;
+    border-bottom: gray solid 1px;
+    width: 100%;
 }

@@ -72,7 +72,7 @@ export default function Home(){
                     <div key={id} class="group-box">
                         <div class="flex">
                             <h1 style={{color:g.color}}>{g.label}</h1>
-                            <SquarePlus onClick={()=>{navigate("/groups/"+g)}} class="group-box-icon" color={g.color} />
+                            <SquarePlus onClick={()=>{navigate("/groups/"+g.label)}} class="group-box-icon" color={g.color} />
                         </div>
                         <p>{g.members.toString()} members</p>
                     </div>

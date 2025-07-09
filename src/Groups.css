@@ -26,18 +26,22 @@ html{
     width: 20%;
     text-wrap: 20%;
     border-radius: 18px;
-    background-color: aquamarine;
+    color: white;
+    font-style: bold;
+
+    background-color: #fdbf04;
 }
 
 
 
 .chat-box{
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 5px 5px 0px 5px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid gray;
     margin-top: 20px;
-    height: auto;
+    height: 300px;
+    overflow-y: auto;
 }
 
 .userlbl{
@@ -46,11 +50,25 @@ html{
     margin-top: -18px;
 }
 
+.back-arrow{
+    cursor: pointer;
+}
+
+.back-arrow:hover{
+    color: #fdbf04;
+    transition: 0.3s;
+}
 .header{
     display: flex;
     border: 1px solid gray;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
+
+.title{
+    display: flex;
+    align-items: center;
+}
+
 
 .title>a{
     margin-top: -40px;
@@ -83,7 +101,7 @@ html{
 button{
     padding: 8px;
     font-weight: bold;
-    background-color: aquamarine;
+    background-color: #fdbf04;
     height: 30%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: none;
@@ -95,23 +113,51 @@ button{
 .banner{
     position: absolute;
     justify-self: left;
-    background-color: aquamarine;
+    background-color: #fdbf04;
 }
 
 .input-box{
- 
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
     z-index: 50;
     right: 0;
     margin-right: 3%;
     margin-top: 20px;
-    width: 50%;
-    align-self: center;
+    width: 100%;
+}
+
+.time-text{
+    font-size: small;
+    text-decoration: underline;
+
+}
+
+.banner{
+    font-size: small;
+    right: 0;
+    padding: 1px;
+    margin-right: 38px;
+    margin-top: -21px;
+    width: 30%;
+    border-radius: 0px 0px 10px 10px;
+    text-align: center;
+    color: white;
+    animation: slide-down;
+    animation-duration: 2s;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slide-down {
+    from{height:0%}
+    to{height:10%}
     
+}
+.banner>h1{
+    font-size: 18px;
 }
 
 .plus-icon{
-    background-color: aquamarine;
+    background-color: #fdbf04;
     border-radius:0px 10px 10px 0px ;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px gray;
@@ -129,6 +175,12 @@ button{
 /* .plus-icon:hover{
     anim
 } */
+
+
+.input-flex-box{
+    display: flex;
+    gap: 0px;
+}
 
 input{
     padding: 10px;

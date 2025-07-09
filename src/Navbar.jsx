@@ -7,7 +7,7 @@ import { Sunrise } from 'lucide-react'
 
 export default function NavBar(){
     const date = new Date()
-    console.log(date)
+
 
 
     return(

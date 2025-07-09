@@ -34,9 +34,9 @@ export default function Home(){
         e.preventDefault();
         const formData = new FormData(e.target)
         const formDataobj = Object.fromEntries(formData);
-        console.log(formDataobj)
+        formDataobj.color = color
         newGroups.push(formDataobj)
-        console.log(newGroups)
+        console.log(formDataobj)
     }
 
     return(
@@ -75,16 +75,7 @@ export default function Home(){
                         <p>{g.members.toString()} members</p>
                     </div>
                 ))}
-                {newGroups>0?
-                newGroups.map((n, id)=> (
-                    <div key={id} class="group-box">
-                        <div class="flex">
-                            <h1 style={{color:new.target}}>{new.target}</h1>
-                            <SquarePlus onClick={()=>{navigate("/groups/"+new.target)}} class="group-box-icon" color={new.target}/>
-                        </div>
-                        <p>0 members</p>
-                    </div>
-                )):<div></div>}
+                
             </div>
         </div>
         <div class="create-section">
@@ -94,15 +85,8 @@ export default function Home(){
                     <input name="group-name" style={{color:color}} id="group-name" placeholder=""/>
                 </div>
                 <div className="flex-box">
-                <label htmlFor="color">Pick a color</label>
-                <select 
-                onChange={(e)=>{setColor(e.target.value)}}
-                name="color" id="color">
-                    <option value={"black"}>Black</option>
-                    <option value={"red"}>Red</option>
-                    <option value={"green"}>Green</option>
-                    <option value={"blue"}>Blue</option>
-                </select>
+                <label style={{width:"180px"}} htmlFor="color">Pick a color</label>
+                <input style={{height:'40px'}} id="color" onChange={(e)=>{setColor(e.target.value)}} type="color" ></input>
                 </div>
                 <div class="grid-box">
                     <label for="description">Description</label>
@@ -119,6 +103,18 @@ export default function Home(){
                     social media. You can also search for friends directly on the platform and send them invitations to join. 
                     Start your own learning community today and enjoy the benefits of studying together!
                 </p>
+                <div style={{width:"30%", marginTop:"30px", gap:'10px'}} className="grid-box">
+                    {newGroups.length>0?
+                    newGroups.map((n, id)=> (
+                    <div key={id} class="group-box">
+                        <div class="flex">
+                            <h1 style={{color:n.color}}>{n['group-name']}</h1>
+                            <SquarePlus onClick={()=>{navigate("/groups/"+n['group-name'])}} class="group-box-icon" color={n.color}/>
+                        </div>
+                        <p>0 members</p>
+                    </div>
+                )):<div></div>}
+               </div>
             </div>
         </div>
        </section>

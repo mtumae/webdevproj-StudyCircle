@@ -7,12 +7,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from './Navbar.jsx'
 import About from './About.jsx'
 import Contact from './Contact.jsx'
+import SignUp from './SignUp.jsx'
 
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
+        <Route path="/signup" element={<SignUp/>}></Route>
+    
         <Route path="/about" element={<About/>}></Route>
         <Route path="/contact" element={<Contact/>}></Route>
         <Route path="/groups/:label" element={<Groups/>}></Route>

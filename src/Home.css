@@ -4,6 +4,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     width: 50%;
     margin-left: -50px;
+    animation: slide-right 2s ease-in-out;
 
 }
 
@@ -12,6 +13,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     width: 40%;
     margin-right: -50px;
+    animation: slide-left 3s ease-in-out;
 
 }
 
@@ -97,6 +99,8 @@
     
 }
 
+
+
 .flex{
     display: flex;
     justify-content: space-between;
@@ -142,18 +146,10 @@ input{
 select{
     border-radius: 5px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-
-
 }
 
-.grid-box{
-    display: grid;
-}
 
-.grid-box>p{
-    font-size: x-small;
-    color: gray;
-}
+
 
 textarea{
     width: 100%;
@@ -163,4 +159,29 @@ textarea{
     padding: 10px;
     font-family: sans-serif
 
+}
+
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
 }

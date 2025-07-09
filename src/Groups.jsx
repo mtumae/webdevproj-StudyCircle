@@ -1,7 +1,7 @@
 import './Groups.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
-import { CirclePlus } from 'lucide-react'
+import { CirclePlus, ChevronLeft, Settings } from 'lucide-react'
 //import icons from lucide
 
 
@@ -11,7 +11,7 @@ export default function Groups() {
   const navigate = useNavigate()
   const[msg, setMsg]=useState("")
   const [copy, setCopy]=useState('')
-  const[oldmessages]=useState([{user:"Mtume", msg:"I love this class.", file:null}, {user:"Bob", msg:"I don't love this class."}])//populate with messages from object
+  const[oldmessages]=useState([{user:"Mtume", time:"08/06/2025 17:04", msg:"I love this class.", file:null}, {user:"Bob", time:"10/09/2025 13:00", msg:"I don't love this class."}])//populate with messages from object
   const[newmessages, setNewMessages]=useState([""])
 
 
@@ -31,31 +31,32 @@ export default function Groups() {
       console.log(error)
     }
   }
+
+  function backHome(){
+    navigate("/")
+  }
   
 
   function onEnter(e){
       if (e.key === 'Enter') {
-        const msgobj = {user:"Mtume", msg:msg}
+        const now = new Date()
+        const msgobj = {user:"Mtume", msg:msg, time:now.toLocaleDateString()+" "+now.toLocaleTimeString()}
         setNewMessages(msgobj)
         oldmessages.push(msgobj)
       }
       console.log(newmessages)
   console.log("New Messages: ",newmessages)
   }
-
-
-
-
-
   return (
     <>
-    <div class="header">
+    <div className="header">
         <div class="title">
+          <ChevronLeft onClick={backHome} className='back-arrow' size={40}/>
           <h1>{params.label}</h1>
         </div>
         <div class="flex-box">
           <button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+            <Settings  />
           </button>
           <button onClick={InviteUser}>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus-icon lucide-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
@@ -65,34 +66,37 @@ export default function Groups() {
           </button>
         </div>
       </div>
-
       <div class='chat-box'>
         {oldmessages.map((msg, id)=>(
 
           msg.user=="Mtume"?
-          <div key={id} class="new-message">
+          <div key={id} className="new-message">
             <p>{msg.msg}</p>
-            <p class="userlbl">{msg.user}</p>
+            <p style={{color:"white"}} class="userlbl">{msg.user} <span className='time-text'>{msg.time}</span></p>
           </div>
           :
-          <div key={id} class="message">
+          <div key={id} className="message">
             <p>{msg.msg}</p>
-            <p class="userlbl">{msg.user}</p>
+            <p  class="userlbl">{msg.user} <span className='time-text'>{msg.time}</span></p>
           </div>
         ))}
       </div>
         <div class="input-box">
+          <div className='input-flex-box'>
                 <input 
                   onKeyDown={(e)=>{onEnter(e)}}
                   onChange={
                     (e)=>{
                       setMsg(e.target.value)
-                      
                     }}  
                   id="msginput" 
                   placeholder="Enter your message..."
                   />
-                <CirclePlus class="plus-icon" size={30} />        
+                  <CirclePlus className="plus-icon" size={30} /> 
+                </div>     
+                <div className='banner'>
+                    <h1>CAT Presentations on Thursday 10 July</h1>
+                </div>  
         </div>
     </>
   )

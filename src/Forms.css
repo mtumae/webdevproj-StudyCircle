@@ -1,0 +1,31 @@
+.signup{
+    display: grid;
+ 
+    width: 65%;
+    margin: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.signup>h1{
+    text-align: center;
+}
+
+.signup>p{
+    text-align: center;
+    justify-self: center;
+    font-size: small;
+    cursor: pointer;
+}
+
+
+
+.grid-box{
+    display: grid;
+}
+
+.grid-box>p{
+    font-size: 13px;
+    color: gray;
+}

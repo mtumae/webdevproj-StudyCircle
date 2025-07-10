@@ -39,7 +39,6 @@
 }
 
 
-
 .round-box{
     padding: 40px;
     border-radius: 30px;
@@ -91,12 +90,10 @@
     cursor: pointer;
     padding: 5px;
     border-radius: 10px;
-
 }
 
 .group-box-icon:hover{
     background-color: #d6dcdc;
-    
 }
 
 

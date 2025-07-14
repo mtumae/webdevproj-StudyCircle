@@ -42,9 +42,9 @@ export default function Home(){
     return(
         <section>
             <NavBar />
-          <div class="box">
-            <img class="homepage-img1" src={studentStudying}/>
-            <p class="box-text">
+          <div className="box">
+            <img className="homepage-img1" src={studentStudying}/>
+            <p className="box-text">
                 Welcome to StudyCircle, your go-to hub for collaborative learning and academic success! 
                 Whether you're preparing for exams, tackling tough assignments, or simply looking to expand 
                 your knowledge, our platform connects you with like-minded students ready to learn and grow 
@@ -52,8 +52,8 @@ export default function Home(){
                 in one convenient place. Let’s make studying smarter, not harder
             </p>
           </div>
-           <div class="box">
-            <p class="box-text">
+           <div className="box">
+            <p className="box-text">
                 StudyCircle, you’ll find groups covering a wide range of subjects, from math and 
                 science to languages, arts, and professional exams. Each group offers a supportive 
                 space where members can discuss ideas, solve problems, exchange notes, and quiz each 
@@ -61,16 +61,16 @@ export default function Home(){
                 but also keeps you accountable and motivated. Plus, you’ll gain valuable collaboration skills
                  and maybe even make new friends along the way!
             </p>
-            <img class="homepage-img2" src={studentStudying2}/>
+            <img className="homepage-img2" src={studentStudying2}/>
           </div>
-        <div class="groups-section">
+        <div className="groups-section">
             <h1>Join a Group</h1>
-            <div class="groups-flexbox">
+            <div className="groups-flexbox">
                 {groups.map((g, id)=>(
-                    <div key={id} class="group-box">
-                        <div class="flex">
+                    <div key={id} className="group-box">
+                        <div className="flex">
                             <h1 style={{color:g.color}}>{g.label}</h1>
-                            <SquarePlus onClick={()=>{navigate("/groups/"+g.label)}} class="group-box-icon" color={g.color} />
+                            <SquarePlus onClick={()=>{navigate("/groups/"+g.label)}} className="group-box-icon" color={g.color} />
                         </div>
                         <p>{g.members.toString()} members</p>
                     </div>
@@ -78,8 +78,8 @@ export default function Home(){
                 
             </div>
         </div>
-        <div class="create-section">
-            <form method="post" id="create-form" class="create-form" onSubmit={handleSubmit}>
+        <div className="create-section">
+            <form method="post" id="create-form" className="create-form" onSubmit={handleSubmit}>
                 <div>
                     <label for="group-name">Group name</label>
                     <input name="group-name" style={{color:color}} id="group-name" placeholder=""/>
@@ -88,7 +88,7 @@ export default function Home(){
                 <label style={{width:"180px"}} htmlFor="color">Pick a color</label>
                 <input style={{height:'40px'}} id="color" onChange={(e)=>{setColor(e.target.value)}} type="color" ></input>
                 </div>
-                <div class="grid-box">
+                <div className="grid-box">
                     <label for="description">Description</label>
                     <textarea name="description" id="description" />
                     <p>Give a short description of the group</p>
@@ -106,10 +106,10 @@ export default function Home(){
                 <div style={{width:"30%", marginTop:"30px", gap:'10px'}} className="grid-box">
                     {newGroups.length>0?
                     newGroups.map((n, id)=> (
-                    <div key={id} class="group-box">
-                        <div class="flex">
+                    <div key={id} className="group-box">
+                        <div className="flex">
                             <h1 style={{color:n.color}}>{n['group-name']}</h1>
-                            <SquarePlus onClick={()=>{navigate("/groups/"+n['group-name'])}} class="group-box-icon" color={n.color}/>
+                            <SquarePlus onClick={()=>{navigate("/groups/"+n['group-name'])}} className="group-box-icon" color={n.color}/>
                         </div>
                         <p>0 members</p>
                     </div>

@@ -8,9 +8,9 @@ import { NavLink } from 'react-router-dom'
 export default function NavBar(){
     const date = new Date()
     return(
-        <div class="header">
+        <div className="header">
             <h1>StudyCirlce</h1>
-            <div class="inner-header">
+            <div className="inner-header">
                 <NavLink   to='/' >
                     {({isActive})=>(
                         <span className={isActive?"active-link":''}>Home</span>

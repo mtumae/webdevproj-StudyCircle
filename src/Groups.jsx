@@ -50,19 +50,19 @@ export default function Groups() {
   return (
     <>
     <div className="header">
-        <div class="title">
+        <div className="title">
           <ChevronLeft onClick={backHome} className='back-arrow' size={40}/>
           <h1>{params.label}</h1>
         </div>
-        <div class="flex-box">
+        <div className="flex-box">
           <button>
             <Settings  />
           </button>
           <button onClick={InviteUser}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus-icon lucide-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-user-plus-icon lucide-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
           </button>
-          <button onClick={LeaveGroup} class="destructive-button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-minus-icon lucide-circle-minus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+          <button onClick={LeaveGroup} className="destructive-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-circle-minus-icon lucide-circle-minus"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
           </button>
         </div>
       </div>
@@ -72,16 +72,16 @@ export default function Groups() {
           msg.user=="Mtume"?
           <div key={id} className="new-message">
             <p>{msg.msg}</p>
-            <p style={{color:"white"}} class="userlbl">{msg.user} <span className='time-text'>{msg.time}</span></p>
+            <p style={{color:"white"}} className="userlbl">{msg.user} <span className='time-text'>{msg.time}</span></p>
           </div>
           :
           <div key={id} className="message">
             <p>{msg.msg}</p>
-            <p  class="userlbl">{msg.user} <span className='time-text'>{msg.time}</span></p>
+            <p  className="userlbl">{msg.user} <span className='time-text'>{msg.time}</span></p>
           </div>
         ))}
       </div>
-        <div class="input-box">
+        <div className="input-box">
           <div className='input-flex-box'>
                 <input 
                   onKeyDown={(e)=>{onEnter(e)}}

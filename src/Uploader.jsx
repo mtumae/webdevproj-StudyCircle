@@ -24,7 +24,7 @@
 
 
 //     return(
-//         <div class="wrapper">
+//         <div className="wrapper">
 //             <input 
 //                 type="file"
 
